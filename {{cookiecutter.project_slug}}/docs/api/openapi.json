@@ -1,0 +1,1604 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "企业级FastAPI后端模板",
+    "description": "企业级FastAPI后端模板 - 开箱即用",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/v1/base/access_token": {
+      "post": {
+        "tags": [
+          "基础模块"
+        ],
+        "summary": "获取token",
+        "operationId": "login_access_token_api_v1_base_access_token_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CredentialsSchema"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/base/refresh_token": {
+      "post": {
+        "tags": [
+          "基础模块"
+        ],
+        "summary": "刷新token",
+        "description": "使用刷新令牌获取新的访问令牌和刷新令牌",
+        "operationId": "refresh_access_token_api_v1_base_refresh_token_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshTokenRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/base/userinfo": {
+      "get": {
+        "tags": [
+          "基础模块"
+        ],
+        "summary": "查看用户信息",
+        "operationId": "get_userinfo_api_v1_base_userinfo_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/base/health": {
+      "get": {
+        "tags": [
+          "基础模块"
+        ],
+        "summary": "健康检查",
+        "description": "系统健康检查",
+        "operationId": "health_check_api_v1_base_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/base/version": {
+      "get": {
+        "tags": [
+          "基础模块"
+        ],
+        "summary": "版本信息",
+        "description": "获取API版本信息",
+        "operationId": "get_version_api_v1_base_version_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/users/list": {
+      "get": {
+        "tags": [
+          "用户模块"
+        ],
+        "summary": "查看用户列表",
+        "operationId": "list_user_api_v1_users_list_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "页码",
+              "default": 1,
+              "title": "Page"
+            },
+            "description": "页码"
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "每页数量",
+              "default": 10,
+              "title": "Page Size"
+            },
+            "description": "每页数量"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "用户名称，用于搜索",
+              "default": "",
+              "title": "Username"
+            },
+            "description": "用户名称，用于搜索"
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "邮箱地址",
+              "default": "",
+              "title": "Email"
+            },
+            "description": "邮箱地址"
+          },
+          {
+            "name": "dept_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "部门ID",
+              "title": "Dept Id"
+            },
+            "description": "部门ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/users/get": {
+      "get": {
+        "tags": [
+          "用户模块"
+        ],
+        "summary": "查看用户",
+        "operationId": "get_user_api_v1_users_get_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "用户ID",
+              "title": "User Id"
+            },
+            "description": "用户ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/users/create": {
+      "post": {
+        "tags": [
+          "用户模块"
+        ],
+        "summary": "创建用户",
+        "operationId": "create_user_api_v1_users_create_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/users/update": {
+      "post": {
+        "tags": [
+          "用户模块"
+        ],
+        "summary": "更新用户",
+        "operationId": "update_user_api_v1_users_update_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserUpdate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/users/delete": {
+      "delete": {
+        "tags": [
+          "用户模块"
+        ],
+        "summary": "删除用户",
+        "operationId": "delete_user_api_v1_users_delete_delete",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "用户ID",
+              "title": "User Id"
+            },
+            "description": "用户ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/users/reset_password": {
+      "post": {
+        "tags": [
+          "用户模块"
+        ],
+        "summary": "重置密码",
+        "operationId": "reset_password_api_v1_users_reset_password_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_reset_password_api_v1_users_reset_password_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/role/list": {
+      "get": {
+        "tags": [
+          "角色模块"
+        ],
+        "summary": "查看角色列表",
+        "operationId": "list_role_api_v1_role_list_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "页码",
+              "default": 1,
+              "title": "Page"
+            },
+            "description": "页码"
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "每页数量",
+              "default": 10,
+              "title": "Page Size"
+            },
+            "description": "每页数量"
+          },
+          {
+            "name": "role_name",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "角色名称，用于查询",
+              "default": "",
+              "title": "Role Name"
+            },
+            "description": "角色名称，用于查询"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/role/get": {
+      "get": {
+        "tags": [
+          "角色模块"
+        ],
+        "summary": "查看角色",
+        "operationId": "get_role_api_v1_role_get_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "role_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "角色ID",
+              "title": "Role Id"
+            },
+            "description": "角色ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/role/create": {
+      "post": {
+        "tags": [
+          "角色模块"
+        ],
+        "summary": "创建角色",
+        "operationId": "create_role_api_v1_role_create_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RoleCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/role/update": {
+      "post": {
+        "tags": [
+          "角色模块"
+        ],
+        "summary": "更新角色",
+        "operationId": "update_role_api_v1_role_update_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RoleUpdate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/role/delete": {
+      "delete": {
+        "tags": [
+          "角色模块"
+        ],
+        "summary": "删除角色",
+        "operationId": "delete_role_api_v1_role_delete_delete",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "role_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "角色ID",
+              "title": "Role Id"
+            },
+            "description": "角色ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/role/authorized": {
+      "get": {
+        "tags": [
+          "角色模块"
+        ],
+        "summary": "查看角色权限",
+        "operationId": "get_role_authorized_api_v1_role_authorized_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "角色ID",
+              "title": "Id"
+            },
+            "description": "角色ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "角色模块"
+        ],
+        "summary": "更新角色权限",
+        "operationId": "update_role_authorized_api_v1_role_authorized_post",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RoleUpdateMenusApis"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/api/list": {
+      "get": {
+        "tags": [
+          "API模块"
+        ],
+        "summary": "查看API列表",
+        "operationId": "list_api_api_v1_api_list_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "页码",
+              "default": 1,
+              "title": "Page"
+            },
+            "description": "页码"
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "每页数量",
+              "default": 10,
+              "title": "Page Size"
+            },
+            "description": "每页数量"
+          },
+          {
+            "name": "path",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "API路径",
+              "title": "Path"
+            },
+            "description": "API路径"
+          },
+          {
+            "name": "summary",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "API简介",
+              "title": "Summary"
+            },
+            "description": "API简介"
+          },
+          {
+            "name": "tags",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "API模块",
+              "title": "Tags"
+            },
+            "description": "API模块"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/api/get": {
+      "get": {
+        "tags": [
+          "API模块"
+        ],
+        "summary": "查看Api",
+        "operationId": "get_api_api_v1_api_get_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "Api",
+              "title": "Id"
+            },
+            "description": "Api"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/api/create": {
+      "post": {
+        "tags": [
+          "API模块"
+        ],
+        "summary": "创建Api",
+        "operationId": "create_api_api_v1_api_create_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApiCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/api/update": {
+      "post": {
+        "tags": [
+          "API模块"
+        ],
+        "summary": "更新Api",
+        "operationId": "update_api_api_v1_api_update_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApiUpdate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/api/delete": {
+      "delete": {
+        "tags": [
+          "API模块"
+        ],
+        "summary": "删除Api",
+        "operationId": "delete_api_api_v1_api_delete_delete",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "api_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "ApiID",
+              "title": "Api Id"
+            },
+            "description": "ApiID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/api/refresh": {
+      "post": {
+        "tags": [
+          "API模块"
+        ],
+        "summary": "刷新API列表",
+        "operationId": "refresh_api_api_v1_api_refresh_post",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/files/upload": {
+      "post": {
+        "tags": [
+          "上传文件"
+        ],
+        "summary": "上传文件",
+        "description": "通用文件上传\n\nArgs:\n    file: 上传的文件\n\nReturns:\n    上传成功的响应，包含文件信息",
+        "operationId": "upload_file_api_v1_files_upload_post",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_upload_file_api_v1_files_upload_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ApiCreate": {
+        "properties": {
+          "path": {
+            "type": "string",
+            "title": "Path",
+            "description": "API路径",
+            "example": "/api/v1/user/list"
+          },
+          "summary": {
+            "type": "string",
+            "title": "Summary",
+            "description": "API简介",
+            "default": "",
+            "example": "查看用户列表"
+          },
+          "method": {
+            "$ref": "#/components/schemas/MethodType",
+            "description": "API方法",
+            "example": "GET"
+          },
+          "tags": {
+            "type": "string",
+            "title": "Tags",
+            "description": "API标签",
+            "example": "User"
+          }
+        },
+        "type": "object",
+        "required": [
+          "path",
+          "method",
+          "tags"
+        ],
+        "title": "ApiCreate"
+      },
+      "ApiUpdate": {
+        "properties": {
+          "path": {
+            "type": "string",
+            "title": "Path",
+            "description": "API路径",
+            "example": "/api/v1/user/list"
+          },
+          "summary": {
+            "type": "string",
+            "title": "Summary",
+            "description": "API简介",
+            "default": "",
+            "example": "查看用户列表"
+          },
+          "method": {
+            "$ref": "#/components/schemas/MethodType",
+            "description": "API方法",
+            "example": "GET"
+          },
+          "tags": {
+            "type": "string",
+            "title": "Tags",
+            "description": "API标签",
+            "example": "User"
+          },
+          "id": {
+            "type": "integer",
+            "title": "Id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "path",
+          "method",
+          "tags",
+          "id"
+        ],
+        "title": "ApiUpdate"
+      },
+      "Body_reset_password_api_v1_users_reset_password_post": {
+        "properties": {
+          "user_id": {
+            "type": "integer",
+            "title": "User Id",
+            "description": "用户ID"
+          }
+        },
+        "type": "object",
+        "required": [
+          "user_id"
+        ],
+        "title": "Body_reset_password_api_v1_users_reset_password_post"
+      },
+      "Body_upload_file_api_v1_files_upload_post": {
+        "properties": {
+          "file": {
+            "type": "string",
+            "format": "binary",
+            "title": "File",
+            "description": "要上传的文件"
+          }
+        },
+        "type": "object",
+        "required": [
+          "file"
+        ],
+        "title": "Body_upload_file_api_v1_files_upload_post"
+      },
+      "CredentialsSchema": {
+        "properties": {
+          "username": {
+            "type": "string",
+            "title": "Username",
+            "description": "用户名称",
+            "example": "admin"
+          },
+          "password": {
+            "type": "string",
+            "title": "Password",
+            "description": "密码",
+            "example": "请输入正确的测试密码"
+          }
+        },
+        "type": "object",
+        "required": [
+          "username",
+          "password"
+        ],
+        "title": "CredentialsSchema"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "MethodType": {
+        "type": "string",
+        "enum": [
+          "GET",
+          "POST",
+          "PUT",
+          "DELETE",
+          "PATCH"
+        ],
+        "title": "MethodType"
+      },
+      "RefreshTokenRequest": {
+        "properties": {
+          "refresh_token": {
+            "type": "string",
+            "title": "Refresh Token",
+            "description": "刷新令牌"
+          }
+        },
+        "type": "object",
+        "required": [
+          "refresh_token"
+        ],
+        "title": "RefreshTokenRequest"
+      },
+      "RoleCreate": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name",
+            "example": "管理员"
+          },
+          "desc": {
+            "type": "string",
+            "title": "Desc",
+            "default": "",
+            "example": "管理员角色"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "title": "RoleCreate"
+      },
+      "RoleUpdate": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id",
+            "example": 1
+          },
+          "name": {
+            "type": "string",
+            "title": "Name",
+            "example": "管理员"
+          },
+          "desc": {
+            "type": "string",
+            "title": "Desc",
+            "default": "",
+            "example": "管理员角色"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name"
+        ],
+        "title": "RoleUpdate"
+      },
+      "RoleUpdateMenusApis": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id"
+          },
+          "menu_ids": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "title": "Menu Ids",
+            "default": []
+          },
+          "api_infos": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Api Infos",
+            "default": []
+          }
+        },
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "title": "RoleUpdateMenusApis"
+      },
+      "UserCreate": {
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email",
+            "title": "Email",
+            "example": "admin@qq.com"
+          },
+          "username": {
+            "type": "string",
+            "maxLength": 20,
+            "minLength": 3,
+            "pattern": "^[a-zA-Z0-9_]+$",
+            "title": "Username",
+            "description": "用户名（3-20位字母数字下划线）",
+            "example": "admin"
+          },
+          "password": {
+            "type": "string",
+            "minLength": 8,
+            "title": "Password",
+            "description": "密码（至少8位，包含字母和数字）",
+            "example": "AdminPass123"
+          },
+          "is_active": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Is Active",
+            "default": true
+          },
+          "is_superuser": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Is Superuser",
+            "default": false
+          },
+          "role_ids": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "integer"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Role Ids",
+            "default": []
+          },
+          "dept_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Dept Id",
+            "description": "部门ID",
+            "default": 0
+          }
+        },
+        "type": "object",
+        "required": [
+          "email",
+          "username",
+          "password"
+        ],
+        "title": "UserCreate"
+      },
+      "UserUpdate": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "title": "Email"
+          },
+          "username": {
+            "type": "string",
+            "title": "Username"
+          },
+          "is_active": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Is Active",
+            "default": true
+          },
+          "is_superuser": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Is Superuser",
+            "default": false
+          },
+          "role_ids": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "integer"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Role Ids",
+            "default": []
+          },
+          "dept_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Dept Id",
+            "default": 0
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "email",
+          "username"
+        ],
+        "title": "UserUpdate"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    },
+    "securitySchemes": {
+      "HTTPBearer": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}

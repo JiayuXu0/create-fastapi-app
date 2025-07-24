@@ -1,0 +1,97 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="apiGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="serviceGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="repoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="modelGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="800" height="600" fill="#f8fafc"/>
+  
+  <!-- 标题 -->
+  <text x="400" y="40" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="24" font-weight="bold">🏗️ 企业级FastAPI三层架构</text>
+  <text x="400" y="65" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="14">清晰分层 • 职责分离 • 易于维护</text>
+  
+  <!-- API Layer -->
+  <rect x="100" y="100" width="600" height="80" rx="8" fill="url(#apiGradient)" filter="url(#shadow)"/>
+  <text x="120" y="130" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="bold">🌐 API Layer (api/v1/)</text>
+  <text x="120" y="150" fill="white" font-family="Arial, sans-serif" font-size="14">路由分发 • 参数验证 • 请求响应处理</text>
+  <text x="120" y="170" fill="white" font-family="Arial, sans-serif" font-size="12">users/ • roles/ • menus/ • files/ • base/</text>
+  
+  <!-- 箭头 -->
+  <polygon points="390,190 400,210 410,190" fill="#64748b"/>
+  <line x1="400" y1="180" x2="400" y2="190" stroke="#64748b" stroke-width="2"/>
+  
+  <!-- Service Layer -->
+  <rect x="100" y="220" width="600" height="80" rx="8" fill="url(#serviceGradient)" filter="url(#shadow)"/>
+  <text x="120" y="250" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="bold">🔧 Service Layer (services/)</text>
+  <text x="120" y="270" fill="white" font-family="Arial, sans-serif" font-size="14">业务逻辑 • 权限检查 • 数据处理</text>
+  <text x="120" y="290" fill="white" font-family="Arial, sans-serif" font-size="12">user_service.py • file_service.py • base_service.py</text>
+  
+  <!-- 箭头 -->
+  <polygon points="390,310 400,330 410,310" fill="#64748b"/>
+  <line x1="400" y1="300" x2="400" y2="310" stroke="#64748b" stroke-width="2"/>
+  
+  <!-- Repository Layer -->
+  <rect x="100" y="340" width="600" height="80" rx="8" fill="url(#repoGradient)" filter="url(#shadow)"/>
+  <text x="120" y="370" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="bold">🗄️ Repository Layer (repositories/)</text>
+  <text x="120" y="390" fill="white" font-family="Arial, sans-serif" font-size="14">数据访问 • CRUD操作 • 查询优化</text>
+  <text x="120" y="410" fill="white" font-family="Arial, sans-serif" font-size="12">user.py • role.py • menu.py • file_mapping.py</text>
+  
+  <!-- 箭头 -->
+  <polygon points="390,430 400,450 410,430" fill="#64748b"/>
+  <line x1="400" y1="420" x2="400" y2="430" stroke="#64748b" stroke-width="2"/>
+  
+  <!-- Model Layer -->
+  <rect x="100" y="460" width="600" height="80" rx="8" fill="url(#modelGradient)" filter="url(#shadow)"/>
+  <text x="120" y="490" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="bold">📊 Model Layer (models/)</text>
+  <text x="120" y="510" fill="white" font-family="Arial, sans-serif" font-size="14">数据模型 • 表结构定义 • 关系映射</text>
+  <text x="120" y="530" fill="white" font-family="Arial, sans-serif" font-size="12">admin.py • base.py • enums.py</text>
+  
+  <!-- 侧边特性说明 -->
+  <rect x="50" y="200" width="30" height="280" rx="15" fill="#e2e8f0"/>
+  <text x="65" y="340" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="12" font-weight="bold" transform="rotate(-90 65 340)">数据流向</text>
+  
+  <!-- 右侧特性 -->
+  <rect x="720" y="120" width="60" height="360" rx="8" fill="white" stroke="#e2e8f0" stroke-width="2" filter="url(#shadow)"/>
+  
+  <!-- 特性图标和文字 -->
+  <circle cx="750" cy="150" r="15" fill="#3b82f6"/>
+  <text x="750" y="155" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">🔒</text>
+  <text x="750" y="180" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="10">JWT认证</text>
+  
+  <circle cx="750" cy="220" r="15" fill="#10b981"/>
+  <text x="750" y="225" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">⚡</text>
+  <text x="750" y="250" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="10">异步高性能</text>
+  
+  <circle cx="750" cy="290" r="15" fill="#f59e0b"/>
+  <text x="750" y="295" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">🛡️</text>
+  <text x="750" y="320" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="10">安全防护</text>
+  
+  <circle cx="750" cy="360" r="15" fill="#8b5cf6"/>
+  <text x="750" y="365" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">📈</text>
+  <text x="750" y="390" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="10">性能监控</text>
+  
+  <circle cx="750" cy="430" r="15" fill="#ef4444"/>
+  <text x="750" y="435" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">🔧</text>
+  <text x="750" y="460" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="10">易于维护</text>
+  
+  <!-- 底部说明 -->
+  <text x="400" y="570" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12">单一职责 • 依赖注入 • 类型安全 • 异步优先</text>
+</svg>

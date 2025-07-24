@@ -1,0 +1,102 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="authGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="securityGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#dc2626;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="performanceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="managementGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="800" height="600" fill="#f8fafc"/>
+
+  <!-- 标题 -->
+  <text x="400" y="40" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="28" font-weight="bold">✨ 核心特性一览</text>
+  <text x="400" y="65" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="16">企业级FastAPI后端模板的强大功能</text>
+
+  <!-- 认证与权限 -->
+  <rect x="50" y="100" width="340" height="200" rx="12" fill="white" stroke="#e2e8f0" stroke-width="2" filter="url(#cardShadow)"/>
+  <rect x="50" y="100" width="340" height="60" rx="12" fill="url(#authGradient)"/>
+  <text x="220" y="135" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="20" font-weight="bold">🔐 认证与权限</text>
+
+  <circle cx="80" cy="190" r="8" fill="#3b82f6"/>
+  <text x="100" y="195" fill="#1e293b" font-family="Arial, sans-serif" font-size="14" font-weight="bold">JWT身份认证</text>
+  <text x="100" y="210" fill="#64748b" font-family="Arial, sans-serif" font-size="12">HS256算法 + 刷新令牌机制</text>
+
+  <circle cx="80" cy="230" r="8" fill="#3b82f6"/>
+  <text x="100" y="235" fill="#1e293b" font-family="Arial, sans-serif" font-size="14" font-weight="bold">RBAC权限控制</text>
+  <text x="100" y="250" fill="#64748b" font-family="Arial, sans-serif" font-size="12">角色基础访问控制，细粒度API权限</text>
+
+  <circle cx="80" cy="270" r="8" fill="#3b82f6"/>
+  <text x="100" y="275" fill="#1e293b" font-family="Arial, sans-serif" font-size="14" font-weight="bold">用户角色管理</text>
+  <text x="100" y="290" fill="#64748b" font-family="Arial, sans-serif" font-size="12">完整的用户注册、登录、权限分配</text>
+
+  <!-- 安全防护 -->
+  <rect x="410" y="100" width="340" height="200" rx="12" fill="white" stroke="#e2e8f0" stroke-width="2" filter="url(#cardShadow)"/>
+  <rect x="410" y="100" width="340" height="60" rx="12" fill="url(#securityGradient)"/>
+  <text x="580" y="135" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="20" font-weight="bold">🛡️ 安全防护</text>
+
+  <circle cx="440" cy="190" r="8" fill="#ef4444"/>
+  <text x="460" y="195" fill="#1e293b" font-family="Arial, sans-serif" font-size="14" font-weight="bold">智能限流</text>
+  <text x="460" y="210" fill="#64748b" font-family="Arial, sans-serif" font-size="12">登录5次/分钟，令牌刷新10次/分钟</text>
+
+  <circle cx="440" cy="230" r="8" fill="#ef4444"/>
+  <text x="460" y="235" fill="#1e293b" font-family="Arial, sans-serif" font-size="14" font-weight="bold">多重防护</text>
+  <text x="460" y="250" fill="#64748b" font-family="Arial, sans-serif" font-size="12">XSS、CSRF、点击劫持防护</text>
+
+  <circle cx="440" cy="270" r="8" fill="#ef4444"/>
+  <text x="460" y="275" fill="#1e293b" font-family="Arial, sans-serif" font-size="14" font-weight="bold">文件安全</text>
+  <text x="460" y="290" fill="#64748b" font-family="Arial, sans-serif" font-size="12">类型验证、大小限制、恶意检测</text>
+
+  <!-- 性能优化 -->
+  <rect x="50" y="320" width="340" height="200" rx="12" fill="white" stroke="#e2e8f0" stroke-width="2" filter="url(#cardShadow)"/>
+  <rect x="50" y="320" width="340" height="60" rx="12" fill="url(#performanceGradient)"/>
+  <text x="220" y="355" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="20" font-weight="bold">⚡ 性能优化</text>
+
+  <circle cx="80" cy="410" r="8" fill="#10b981"/>
+  <text x="100" y="415" fill="#1e293b" font-family="Arial, sans-serif" font-size="14" font-weight="bold">异步架构</text>
+  <text x="100" y="430" fill="#64748b" font-family="Arial, sans-serif" font-size="12">全异步设计，支持高并发访问</text>
+
+  <circle cx="80" cy="450" r="8" fill="#10b981"/>
+  <text x="100" y="455" fill="#1e293b" font-family="Arial, sans-serif" font-size="14" font-weight="bold">连接池优化</text>
+  <text x="100" y="470" fill="#64748b" font-family="Arial, sans-serif" font-size="12">20连接池 + 超时控制</text>
+
+  <circle cx="80" cy="490" r="8" fill="#10b981"/>
+  <text x="100" y="495" fill="#1e293b" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Redis缓存</text>
+  <text x="100" y="510" fill="#64748b" font-family="Arial, sans-serif" font-size="12">智能缓存策略和用户缓存管理</text>
+
+  <!-- 数据管理 -->
+  <rect x="410" y="320" width="340" height="200" rx="12" fill="white" stroke="#e2e8f0" stroke-width="2" filter="url(#cardShadow)"/>
+  <rect x="410" y="320" width="340" height="60" rx="12" fill="url(#managementGradient)"/>
+  <text x="580" y="355" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="20" font-weight="bold">🗂️ 数据管理</text>
+
+  <circle cx="440" cy="410" r="8" fill="#f59e0b"/>
+  <text x="460" y="415" fill="#1e293b" font-family="Arial, sans-serif" font-size="14" font-weight="bold">菜单管理</text>
+  <text x="460" y="430" fill="#64748b" font-family="Arial, sans-serif" font-size="12">动态菜单配置，多级菜单结构</text>
+
+  <circle cx="440" cy="450" r="8" fill="#f59e0b"/>
+  <text x="460" y="455" fill="#1e293b" font-family="Arial, sans-serif" font-size="14" font-weight="bold">部门管理</text>
+  <text x="460" y="470" fill="#64748b" font-family="Arial, sans-serif" font-size="12">组织架构管理，支持层级结构</text>
+
+  <circle cx="440" cy="490" r="8" fill="#f59e0b"/>
+  <text x="460" y="495" fill="#1e293b" font-family="Arial, sans-serif" font-size="14" font-weight="bold">文件管理</text>
+  <text x="460" y="510" fill="#64748b" font-family="Arial, sans-serif" font-size="12">安全的文件上传、下载、存储</text>
+
+  <!-- 底部统计 -->
+  <rect x="200" y="540" width="400" height="40" rx="20" fill="#1e293b" opacity="0.9"/>
+  <text x="400" y="565" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">🚀 21+ APIs • 9+ 核心模块 • 企业级标准</text>
+</svg>
