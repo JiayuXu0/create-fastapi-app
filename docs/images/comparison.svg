@@ -1,0 +1,119 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="comparisonBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <filter id="tableGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#comparisonBg)"/>
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">🆚 对比其他模板</text>
+  
+  <!-- Table Container -->
+  <rect x="50" y="60" width="700" height="400" rx="10" fill="white" filter="url(#tableGlow)"/>
+  
+  <!-- Table Header -->
+  <rect x="50" y="60" width="700" height="50" rx="10" fill="#1f2937"/>
+  <text x="100" y="85" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">特性</text>
+  <text x="250" y="85" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#10b981">Create FastAPI App</text>
+  <text x="450" y="85" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">普通模板</text>
+  <text x="620" y="85" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">从零开始</text>
+  
+  <!-- Table Rows -->
+  <!-- Row 1: 项目初始化时间 -->
+  <rect x="50" y="110" width="700" height="40" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="70" y="133" font-family="Arial, sans-serif" font-size="12" fill="#374151">项目初始化时间</text>
+  <rect x="220" y="118" width="80" height="24" rx="12" fill="#10b981"/>
+  <text x="260" y="133" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white" text-anchor="middle">⚡ 2 分钟</text>
+  <rect x="420" y="118" width="80" height="24" rx="12" fill="#f59e0b"/>
+  <text x="460" y="133" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white" text-anchor="middle">🐢 10 分钟</text>
+  <rect x="590" y="118" width="80" height="24" rx="12" fill="#ef4444"/>
+  <text x="630" y="133" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white" text-anchor="middle">🐌 数小时</text>
+  
+  <!-- Row 2: 企业级架构 -->
+  <rect x="50" y="150" width="700" height="40" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="70" y="173" font-family="Arial, sans-serif" font-size="12" fill="#374151">企业级架构</text>
+  <circle cx="260" cy="170" r="12" fill="#10b981"/>
+  <text x="260" y="175" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">✓</text>
+  <circle cx="460" cy="170" r="12" fill="#ef4444"/>
+  <text x="460" y="175" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">✗</text>
+  <circle cx="630" cy="170" r="12" fill="#ef4444"/>
+  <text x="630" y="175" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">✗</text>
+  
+  <!-- Row 3: RBAC 权限系统 -->
+  <rect x="50" y="190" width="700" height="40" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="70" y="213" font-family="Arial, sans-serif" font-size="12" fill="#374151">RBAC 权限系统</text>
+  <circle cx="260" cy="210" r="12" fill="#10b981"/>
+  <text x="260" y="215" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">✓</text>
+  <circle cx="460" cy="210" r="12" fill="#ef4444"/>
+  <text x="460" y="215" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">✗</text>
+  <circle cx="630" cy="210" r="12" fill="#ef4444"/>
+  <text x="630" y="215" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">✗</text>
+  
+  <!-- Row 4: 生产就绪 -->
+  <rect x="50" y="230" width="700" height="40" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="70" y="253" font-family="Arial, sans-serif" font-size="12" fill="#374151">生产就绪</text>
+  <circle cx="260" cy="250" r="12" fill="#10b981"/>
+  <text x="260" y="255" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">✓</text>
+  <circle cx="460" cy="250" r="12" fill="#f59e0b"/>
+  <text x="460" y="255" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">⚠</text>
+  <circle cx="630" cy="250" r="12" fill="#ef4444"/>
+  <text x="630" y="255" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">✗</text>
+  
+  <!-- Row 5: 最佳实践 -->
+  <rect x="50" y="270" width="700" height="40" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="70" y="293" font-family="Arial, sans-serif" font-size="12" fill="#374151">最佳实践</text>
+  <circle cx="260" cy="290" r="12" fill="#10b981"/>
+  <text x="260" y="295" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">✓</text>
+  <circle cx="460" cy="290" r="12" fill="#f59e0b"/>
+  <text x="460" y="295" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">⚠</text>
+  <circle cx="630" cy="290" r="12" fill="#ef4444"/>
+  <text x="630" y="295" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">✗</text>
+  
+  <!-- Row 6: 完整测试 -->
+  <rect x="50" y="310" width="700" height="40" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="70" y="333" font-family="Arial, sans-serif" font-size="12" fill="#374151">完整测试</text>
+  <circle cx="260" cy="330" r="12" fill="#10b981"/>
+  <text x="260" y="335" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">✓</text>
+  <circle cx="460" cy="330" r="12" fill="#f59e0b"/>
+  <text x="460" y="335" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">⚠</text>
+  <circle cx="630" cy="330" r="12" fill="#ef4444"/>
+  <text x="630" y="335" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">✗</text>
+  
+  <!-- Row 7: 文档完整性 -->
+  <rect x="50" y="350" width="700" height="40" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="70" y="373" font-family="Arial, sans-serif" font-size="12" fill="#374151">文档完整性</text>
+  <circle cx="260" cy="370" r="12" fill="#10b981"/>
+  <text x="260" y="375" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">✓</text>
+  <circle cx="460" cy="370" r="12" fill="#f59e0b"/>
+  <text x="460" y="375" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">⚠</text>
+  <circle cx="630" cy="370" r="12" fill="#ef4444"/>
+  <text x="630" y="375" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">✗</text>
+  
+  <!-- Row 8: 学习成本 -->
+  <rect x="50" y="390" width="700" height="40" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="70" y="413" font-family="Arial, sans-serif" font-size="12" fill="#374151">学习成本</text>
+  <rect x="220" y="398" width="80" height="24" rx="12" fill="#10b981"/>
+  <text x="260" y="413" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white" text-anchor="middle">📚 很低</text>
+  <rect x="420" y="398" width="80" height="24" rx="12" fill="#f59e0b"/>
+  <text x="460" y="413" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white" text-anchor="middle">📖 中等</text>
+  <rect x="590" y="398" width="80" height="24" rx="12" fill="#ef4444"/>
+  <text x="630" y="413" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white" text-anchor="middle">📚 很高</text>
+  
+  <!-- Winner Badge -->
+  <g transform="translate(200, 430)">
+    <rect x="0" y="0" width="120" height="30" rx="15" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <text x="60" y="20" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#92400e" text-anchor="middle">🏆 最佳选择</text>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(480, 440)">
+    <text x="0" y="15" font-family="Arial, sans-serif" font-size="10" fill="white">✓ 完全支持  ⚠ 部分支持  ✗ 不支持</text>
+  </g>
+</svg>

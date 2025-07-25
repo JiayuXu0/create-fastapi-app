@@ -1,0 +1,76 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="terminalBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#161b22;stop-opacity:1" />
+    </linearGradient>
+    <filter id="terminalGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#terminalBg)"/>
+  
+  <!-- Terminal Window -->
+  <rect x="50" y="50" width="700" height="400" rx="10" fill="#0d1117" stroke="#30363d" stroke-width="2"/>
+  
+  <!-- Terminal Header -->
+  <rect x="50" y="50" width="700" height="30" rx="10" fill="#21262d"/>
+  <circle cx="70" cy="65" r="6" fill="#ff5f56"/>
+  <circle cx="90" cy="65" r="6" fill="#ffbd2e"/>
+  <circle cx="110" cy="65" r="6" fill="#27ca3f"/>
+  <text x="130" y="70" font-family="Arial, sans-serif" font-size="12" fill="#f0f6fc">Terminal</text>
+  
+  <!-- Command Steps -->
+  <g transform="translate(70, 100)">
+    <!-- Step 1 -->
+    <text x="0" y="20" font-family="Monaco, monospace" font-size="14" fill="#58a6ff">$ </text>
+    <text x="20" y="20" font-family="Monaco, monospace" font-size="14" fill="#f0f6fc">cookiecutter https://github.com/JiayuXu0/create-fastapi-app</text>
+    
+    <!-- Step 2 -->
+    <text x="0" y="50" font-family="Monaco, monospace" font-size="12" fill="#7ee787">project_name [My FastAPI Project]: </text>
+    <text x="280" y="50" font-family="Monaco, monospace" font-size="12" fill="#ffa657">Awesome API</text>
+    
+    <!-- Step 3 -->
+    <text x="0" y="70" font-family="Monaco, monospace" font-size="12" fill="#7ee787">project_slug [awesome-api]: </text>
+    <text x="240" y="70" font-family="Monaco, monospace" font-size="12" fill="#f0f6fc">✓</text>
+    
+    <!-- Step 4 -->
+    <text x="0" y="90" font-family="Monaco, monospace" font-size="12" fill="#7ee787">Select database_type:</text>
+    <text x="0" y="110" font-family="Monaco, monospace" font-size="12" fill="#f0f6fc">1 - postgresql</text>
+    <text x="0" y="130" font-family="Monaco, monospace" font-size="12" fill="#f0f6fc">2 - sqlite</text>
+    <text x="0" y="150" font-family="Monaco, monospace" font-size="12" fill="#7ee787">Choose from 1, 2 [1]: </text>
+    <text x="180" y="150" font-family="Monaco, monospace" font-size="12" fill="#ffa657">1</text>
+    
+    <!-- Step 5 -->
+    <text x="0" y="180" font-family="Monaco, monospace" font-size="12" fill="#7ee787">Select use_redis:</text>
+    <text x="0" y="200" font-family="Monaco, monospace" font-size="12" fill="#f0f6fc">1 - yes</text>
+    <text x="0" y="220" font-family="Monaco, monospace" font-size="12" fill="#f0f6fc">2 - no</text>
+    <text x="0" y="240" font-family="Monaco, monospace" font-size="12" fill="#7ee787">Choose from 1, 2 [1]: </text>
+    <text x="180" y="240" font-family="Monaco, monospace" font-size="12" fill="#ffa657">1</text>
+    
+    <!-- Success Message -->
+    <rect x="0" y="260" width="660" height="60" rx="5" fill="#0d4429" stroke="#238636" stroke-width="1"/>
+    <text x="10" y="280" font-family="Monaco, monospace" font-size="12" fill="#7ee787">✅ 项目创建成功！</text>
+    <text x="10" y="300" font-family="Monaco, monospace" font-size="12" fill="#7ee787">📁 项目路径: ./awesome-api</text>
+    
+    <!-- Next Steps -->
+    <text x="0" y="340" font-family="Monaco, monospace" font-size="12" fill="#58a6ff">接下来的步骤:</text>
+    <text x="0" y="360" font-family="Monaco, monospace" font-size="11" fill="#f0f6fc">cd awesome-api && cp .env.example .env</text>
+    <text x="0" y="375" font-family="Monaco, monospace" font-size="11" fill="#f0f6fc">uv sync --dev && uv run aerich init-db</text>
+    <text x="0" y="390" font-family="Monaco, monospace" font-size="11" fill="#f0f6fc">uv run uvicorn src:app --reload</text>
+  </g>
+  
+  <!-- Cursor Animation Indicator -->
+  <rect x="250" y="390" width="8" height="15" fill="#58a6ff" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0.2;0.8" dur="1s" repeatCount="indefinite"/>
+  </rect>
+  
+  <!-- Demo Label -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#58a6ff" text-anchor="middle">🎬 项目创建演示</text>
+</svg>

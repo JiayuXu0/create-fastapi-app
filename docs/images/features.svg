@@ -1,0 +1,124 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="featureBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <filter id="featureGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#featureBg)"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="white" text-anchor="middle">✨ 核心特性</text>
+  
+  <!-- Feature Grid -->
+  <!-- Row 1 -->
+  <g transform="translate(50, 80)">
+    <!-- Architecture -->
+    <rect x="0" y="0" width="160" height="120" rx="10" fill="white" filter="url(#featureGlow)"/>
+    <rect x="0" y="0" width="160" height="30" rx="10" fill="#3b82f6"/>
+    <text x="80" y="20" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">🏗️ 架构设计</text>
+    <text x="10" y="50" font-family="Arial, sans-serif" font-size="11" fill="#1f2937">✅ 三层架构</text>
+    <text x="10" y="65" font-family="Arial, sans-serif" font-size="11" fill="#1f2937">✅ 依赖注入</text>
+    <text x="10" y="80" font-family="Arial, sans-serif" font-size="11" fill="#1f2937">✅ 异步优先</text>
+    <text x="10" y="95" font-family="Arial, sans-serif" font-size="11" fill="#1f2937">✅ 类型安全</text>
+    
+    <!-- Security -->
+    <rect x="180" y="0" width="160" height="120" rx="10" fill="white" filter="url(#featureGlow)"/>
+    <rect x="180" y="0" width="160" height="30" rx="10" fill="#10b981"/>
+    <text x="260" y="20" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">🔐 安全认证</text>
+    <text x="190" y="50" font-family="Arial, sans-serif" font-size="11" fill="#1f2937">✅ JWT 认证</text>
+    <text x="190" y="65" font-family="Arial, sans-serif" font-size="11" fill="#1f2937">✅ RBAC 权限</text>
+    <text x="190" y="80" font-family="Arial, sans-serif" font-size="11" fill="#1f2937">✅ 密码加密</text>
+    <text x="190" y="95" font-family="Arial, sans-serif" font-size="11" fill="#1f2937">✅ API 限流</text>
+    
+    <!-- Performance -->
+    <rect x="360" y="0" width="160" height="120" rx="10" fill="white" filter="url(#featureGlow)"/>
+    <rect x="360" y="0" width="160" height="30" rx="10" fill="#f59e0b"/>
+    <text x="440" y="20" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">🚀 性能优化</text>
+    <text x="370" y="50" font-family="Arial, sans-serif" font-size="11" fill="#1f2937">✅ Redis 缓存</text>
+    <text x="370" y="65" font-family="Arial, sans-serif" font-size="11" fill="#1f2937">✅ 数据库优化</text>
+    <text x="370" y="80" font-family="Arial, sans-serif" font-size="11" fill="#1f2937">✅ 文件管理</text>
+    <text x="370" y="95" font-family="Arial, sans-serif" font-size="11" fill="#1f2937">✅ 后台任务</text>
+    
+    <!-- Developer Experience -->
+    <rect x="540" y="0" width="160" height="120" rx="10" fill="white" filter="url(#featureGlow)"/>
+    <rect x="540" y="0" width="160" height="30" rx="10" fill="#ef4444"/>
+    <text x="620" y="20" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">🛠️ 开发体验</text>
+    <text x="550" y="50" font-family="Arial, sans-serif" font-size="11" fill="#1f2937">✅ 自动文档</text>
+    <text x="550" y="65" font-family="Arial, sans-serif" font-size="11" fill="#1f2937">✅ 代码质量</text>
+    <text x="550" y="80" font-family="Arial, sans-serif" font-size="11" fill="#1f2937">✅ 测试框架</text>
+    <text x="550" y="95" font-family="Arial, sans-serif" font-size="11" fill="#1f2937">✅ Docker 支持</text>
+  </g>
+  
+  <!-- Technology Stack -->
+  <g transform="translate(50, 230)">
+    <rect x="0" y="0" width="700" height="150" rx="10" fill="white" filter="url(#featureGlow)"/>
+    <rect x="0" y="0" width="700" height="40" rx="10" fill="#7c3aed"/>
+    <text x="350" y="25" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white" text-anchor="middle">🔧 技术栈</text>
+    
+    <!-- Tech Icons Row 1 -->
+    <g transform="translate(50, 60)">
+      <!-- FastAPI -->
+      <rect x="0" y="0" width="80" height="60" rx="5" fill="#009688"/>
+      <text x="40" y="25" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">FastAPI</text>
+      <text x="40" y="40" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">Web 框架</text>
+      
+      <!-- PostgreSQL -->
+      <rect x="100" y="0" width="80" height="60" rx="5" fill="#336791"/>
+      <text x="140" y="25" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">PostgreSQL</text>
+      <text x="140" y="40" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">数据库</text>
+      
+      <!-- Redis -->
+      <rect x="200" y="0" width="80" height="60" rx="5" fill="#dc382d"/>
+      <text x="240" y="25" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">Redis</text>
+      <text x="240" y="40" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">缓存</text>
+      
+      <!-- Docker -->
+      <rect x="300" y="0" width="80" height="60" rx="5" fill="#2496ed"/>
+      <text x="340" y="25" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">Docker</text>
+      <text x="340" y="40" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">容器化</text>
+      
+      <!-- Pytest -->
+      <rect x="400" y="0" width="80" height="60" rx="5" fill="#0a9edc"/>
+      <text x="440" y="25" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">Pytest</text>
+      <text x="440" y="40" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">测试</text>
+      
+      <!-- Ruff -->
+      <rect x="500" y="0" width="80" height="60" rx="5" fill="#d7ff64"/>
+      <text x="540" y="25" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="black" text-anchor="middle">Ruff</text>
+      <text x="540" y="40" font-family="Arial, sans-serif" font-size="10" fill="black" text-anchor="middle">代码检查</text>
+    </g>
+  </g>
+  
+  <!-- Benefits Section -->
+  <g transform="translate(50, 410)">
+    <rect x="0" y="0" width="700" height="140" rx="10" fill="white" filter="url(#featureGlow)"/>
+    <rect x="0" y="0" width="700" height="40" rx="10" fill="#059669"/>
+    <text x="350" y="25" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white" text-anchor="middle">💡 为什么选择我们？</text>
+    
+    <g transform="translate(30, 60)">
+      <!-- Benefit 1 -->
+      <rect x="0" y="0" width="200" height="60" rx="5" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+      <text x="10" y="20" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#15803d">⚡ 快速启动</text>
+      <text x="10" y="35" font-family="Arial, sans-serif" font-size="10" fill="#166534">2 分钟创建企业级项目</text>
+      <text x="10" y="50" font-family="Arial, sans-serif" font-size="10" fill="#166534">开箱即用的完整功能</text>
+      
+      <!-- Benefit 2 -->
+      <rect x="220" y="0" width="200" height="60" rx="5" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+      <text x="230" y="20" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1e40af">🏢 生产就绪</text>
+      <text x="230" y="35" font-family="Arial, sans-serif" font-size="10" fill="#1e3a8a">遵循最佳实践</text>
+      <text x="230" y="50" font-family="Arial, sans-serif" font-size="10" fill="#1e3a8a">企业级安全标准</text>
+      
+      <!-- Benefit 3 -->
+      <rect x="440" y="0" width="200" height="60" rx="5" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+      <text x="450" y="20" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#92400e">📚 易于学习</text>
+      <text x="450" y="35" font-family="Arial, sans-serif" font-size="10" fill="#78350f">清晰的代码结构</text>
+      <text x="450" y="50" font-family="Arial, sans-serif" font-size="10" fill="#78350f">完整的文档说明</text>
+    </g>
+  </g>
+</svg>

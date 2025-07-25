@@ -1,0 +1,142 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="rbacBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c3aed;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#rbacBg)"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="white" text-anchor="middle">RBAC 权限管理系统</text>
+  
+  <!-- Users Section -->
+  <g transform="translate(50, 80)">
+    <rect width="200" height="450" rx="10" fill="white" filter="url(#cardShadow)"/>
+    <rect width="200" height="40" rx="10" fill="#3b82f6"/>
+    <text x="100" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">👥 用户</text>
+    
+    <!-- User 1 -->
+    <g transform="translate(15, 60)">
+      <circle cx="20" cy="20" r="15" fill="#f3f4f6"/>
+      <text x="20" y="25" font-family="Arial, sans-serif" font-size="12" fill="#374151" text-anchor="middle">👤</text>
+      <text x="45" y="18" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2937">管理员</text>
+      <text x="45" y="30" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">admin@example.com</text>
+    </g>
+    
+    <!-- User 2 -->
+    <g transform="translate(15, 110)">
+      <circle cx="20" cy="20" r="15" fill="#f3f4f6"/>
+      <text x="20" y="25" font-family="Arial, sans-serif" font-size="12" fill="#374151" text-anchor="middle">👤</text>
+      <text x="45" y="18" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2937">编辑者</text>
+      <text x="45" y="30" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">editor@example.com</text>
+    </g>
+    
+    <!-- User 3 -->
+    <g transform="translate(15, 160)">
+      <circle cx="20" cy="20" r="15" fill="#f3f4f6"/>
+      <text x="20" y="25" font-family="Arial, sans-serif" font-size="12" fill="#374151" text-anchor="middle">👤</text>
+      <text x="45" y="18" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2937">查看者</text>
+      <text x="45" y="30" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">viewer@example.com</text>
+    </g>
+  </g>
+  
+  <!-- Roles Section -->
+  <g transform="translate(300, 80)">
+    <rect width="200" height="450" rx="10" fill="white" filter="url(#cardShadow)"/>
+    <rect width="200" height="40" rx="10" fill="#10b981"/>
+    <text x="100" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">🎭 角色</text>
+    
+    <!-- Role 1 -->
+    <g transform="translate(15, 60)">
+      <rect x="0" y="0" width="170" height="50" rx="5" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+      <text x="10" y="20" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#92400e">🔑 超级管理员</text>
+      <text x="10" y="35" font-family="Arial, sans-serif" font-size="10" fill="#78350f">完全访问权限</text>
+    </g>
+    
+    <!-- Role 2 -->
+    <g transform="translate(15, 130)">
+      <rect x="0" y="0" width="170" height="50" rx="5" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+      <text x="10" y="20" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e40af">✏️ 内容编辑</text>
+      <text x="10" y="35" font-family="Arial, sans-serif" font-size="10" fill="#1e3a8a">读写内容权限</text>
+    </g>
+    
+    <!-- Role 3 -->
+    <g transform="translate(15, 200)">
+      <rect x="0" y="0" width="170" height="50" rx="5" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
+      <text x="10" y="20" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#15803d">👁️ 只读用户</text>
+      <text x="10" y="35" font-family="Arial, sans-serif" font-size="10" fill="#166534">仅查看权限</text>
+    </g>
+  </g>
+  
+  <!-- Permissions Section -->
+  <g transform="translate(550, 80)">
+    <rect width="200" height="450" rx="10" fill="white" filter="url(#cardShadow)"/>
+    <rect width="200" height="40" rx="10" fill="#ef4444"/>
+    <text x="100" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">🛡️ 权限</text>
+    
+    <!-- Permission 1 -->
+    <g transform="translate(15, 60)">
+      <rect x="0" y="0" width="170" height="30" rx="3" fill="#fee2e2" stroke="#ef4444" stroke-width="1"/>
+      <text x="10" y="20" font-family="Arial, sans-serif" font-size="12" fill="#dc2626">📝 users:create</text>
+    </g>
+    
+    <!-- Permission 2 -->
+    <g transform="translate(15, 100)">
+      <rect x="0" y="0" width="170" height="30" rx="3" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+      <text x="10" y="20" font-family="Arial, sans-serif" font-size="12" fill="#d97706">👁️ users:read</text>
+    </g>
+    
+    <!-- Permission 3 -->
+    <g transform="translate(15, 140)">
+      <rect x="0" y="0" width="170" height="30" rx="3" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+      <text x="10" y="20" font-family="Arial, sans-serif" font-size="12" fill="#2563eb">✏️ users:update</text>
+    </g>
+    
+    <!-- Permission 4 -->
+    <g transform="translate(15, 180)">
+      <rect x="0" y="0" width="170" height="30" rx="3" fill="#fee2e2" stroke="#ef4444" stroke-width="1"/>
+      <text x="10" y="20" font-family="Arial, sans-serif" font-size="12" fill="#dc2626">🗑️ users:delete</text>
+    </g>
+    
+    <!-- Permission 5 -->
+    <g transform="translate(15, 220)">
+      <rect x="0" y="0" width="170" height="30" rx="3" fill="#dcfce7" stroke="#22c55e" stroke-width="1"/>
+      <text x="10" y="20" font-family="Arial, sans-serif" font-size="12" fill="#16a34a">📊 posts:read</text>
+    </g>
+    
+    <!-- Permission 6 -->
+    <g transform="translate(15, 260)">
+      <rect x="0" y="0" width="170" height="30" rx="3" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+      <text x="10" y="20" font-family="Arial, sans-serif" font-size="12" fill="#2563eb">📝 posts:write</text>
+    </g>
+  </g>
+  
+  <!-- Arrows -->
+  <!-- User to Role arrows -->
+  <path d="M 250 140 Q 275 140 275 140 L 300 140" stroke="#6b7280" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 250 190 Q 275 190 275 190 L 300 210" stroke="#6b7280" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 250 240 Q 275 240 275 240 L 300 280" stroke="#6b7280" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Role to Permission arrows -->
+  <path d="M 500 140 Q 525 140 525 140 L 550 140" stroke="#6b7280" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 500 210 Q 525 210 525 210 L 550 210" stroke="#6b7280" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 500 280 Q 525 280 525 280 L 550 280" stroke="#6b7280" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280"/>
+    </marker>
+  </defs>
+  
+  <!-- Legend -->
+  <g transform="translate(50, 550)">
+    <text x="0" y="15" font-family="Arial, sans-serif" font-size="12" fill="white">💡 用户通过角色获得权限，支持多角色分配和动态权限管理</text>
+  </g>
+</svg>

@@ -1,5 +1,7 @@
 <div align="center">
 
+### 🌟 如果这个项目对你有帮助，请给个 Star！
+
 # 🚀 Create FastAPI App
 
 <p align="center">
@@ -35,53 +37,16 @@
 ## 🎬 演示
 
 <div align="center">
-  <img src="https://github.com/JiayuXu0/create-fastapi-app/assets/demo.gif" alt="Demo" width="600">
+  <img src="docs/demo.gif" alt="项目创建演示" width="700">
 </div>
 
 ## ✨ 特性
 
-<table>
-<tr>
-<td>
+<div align="center">
+  <img src="docs/images/features.svg" alt="核心特性" width="800">
+</div>
 
-### 🏗️ 架构设计
-- ✅ **三层架构** - API/Service/Repository 清晰分层
-- ✅ **依赖注入** - FastAPI 原生 DI 系统
-- ✅ **异步优先** - 全异步 I/O 操作
-- ✅ **类型安全** - 完整的类型注解
 
-</td>
-<td>
-
-### 🔐 安全认证
-- ✅ **JWT 认证** - 双令牌机制 (Access + Refresh)
-- ✅ **RBAC 权限** - 角色权限管理系统
-- ✅ **密码加密** - Argon2 安全哈希
-- ✅ **API 限流** - 请求频率限制
-
-</td>
-</tr>
-<tr>
-<td>
-
-### 🚀 性能优化
-- ✅ **Redis 缓存** - 智能缓存策略
-- ✅ **数据库优化** - 连接池 + 查询优化
-- ✅ **文件管理** - 安全的文件上传/下载
-- ✅ **后台任务** - 异步任务处理
-
-</td>
-<td>
-
-### 🛠️ 开发体验
-- ✅ **自动文档** - Swagger/ReDoc
-- ✅ **代码质量** - Pre-commit + Ruff
-- ✅ **测试框架** - Pytest + 覆盖率
-- ✅ **Docker 支持** - 容器化部署
-
-</td>
-</tr>
-</table>
 
 ## 🚀 快速开始
 
@@ -129,6 +94,10 @@ uv run uvicorn src:app --reload
 🎉 **完成！** 访问 http://localhost:8000/docs 查看 API 文档
 
 ## 🎯 为什么选择 Create FastAPI App？
+
+<div align="center">
+  <img src="docs/images/comparison.svg" alt="对比其他模板" width="800">
+</div>
 
 ### 🆚 对比其他模板
 
@@ -189,38 +158,11 @@ awesome-api/
 └── 🔄 migrations/              # 数据库迁移
 ```
 
-## 🎨 生成项目预览
 
-<details>
-<summary><b>📱 API 文档界面</b></summary>
-
-![API Docs](https://github.com/JiayuXu0/create-fastapi-app/assets/api-docs.png)
-
-</details>
-
-<details>
-<summary><b>🔐 RBAC 权限管理</b></summary>
-
-![RBAC System](https://github.com/JiayuXu0/create-fastapi-app/assets/rbac.png)
-
-</details>
-
-<details>
-<summary><b>📊 项目结构</b></summary>
-
-![Project Structure](https://github.com/JiayuXu0/create-fastapi-app/assets/structure.png)
-
-</details>
 
 ## 🤝 贡献
 
 欢迎贡献！请查看 [贡献指南](CONTRIBUTING.md) 了解如何开始。
-
-### 贡献者
-
-<a href="https://github.com/JiayuXu0/create-fastapi-app/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=JiayuXu0/create-fastapi-app" />
-</a>
 
 ## 📄 许可证
 
@@ -231,19 +173,3 @@ awesome-api/
 - 🌟 [FastAPI-Template](https://github.com/JiayuXu0/FastAPI-Template) - 核心模板
 - 🍪 [Cookiecutter](https://github.com/cookiecutter/cookiecutter) - 项目生成器
 - ⚡ [FastAPI](https://fastapi.tiangolo.com/) - Web 框架
-
----
-
-<div align="center">
-
-### 🌟 如果这个项目对你有帮助，请给个 Star！
-
-<a href="https://github.com/JiayuXu0/create-fastapi-app">
-  <img src="https://img.shields.io/github/stars/JiayuXu0/create-fastapi-app?style=social" alt="Star">
-</a>
-
-<p>
-  <a href="https://github.com/JiayuXu0/FastAPI-Template">⭐ 也欢迎给原模板项目 Star</a>
-</p>
-
-</div>

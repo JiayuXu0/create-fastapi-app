@@ -1,0 +1,121 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="useCaseBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <filter id="iconGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#useCaseBg)"/>
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="white" text-anchor="middle">💡 适用场景</text>
+  
+  <!-- Use Case Cards -->
+  <!-- Enterprise Applications -->
+  <g transform="translate(50, 70)">
+    <rect x="0" y="0" width="320" height="180" rx="15" fill="white" filter="url(#cardShadow)"/>
+    <rect x="0" y="0" width="320" height="50" rx="15" fill="#1e40af"/>
+    
+    <!-- Icon -->
+    <circle cx="40" cy="25" r="18" fill="#3b82f6" filter="url(#iconGlow)"/>
+    <text x="40" y="32" font-family="Arial, sans-serif" font-size="20" fill="white" text-anchor="middle">🏢</text>
+    
+    <text x="70" y="32" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">企业级应用</text>
+    
+    <g transform="translate(20, 70)">
+      <text x="0" y="20" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1f2937">适合场景：</text>
+      <text x="0" y="40" font-family="Arial, sans-serif" font-size="12" fill="#374151">• 需要完整用户权限管理的系统</text>
+      <text x="0" y="55" font-family="Arial, sans-serif" font-size="12" fill="#374151">• 多角色协作的业务平台</text>
+      <text x="0" y="70" font-family="Arial, sans-serif" font-size="12" fill="#374151">• 企业内部管理系统</text>
+      <text x="0" y="85" font-family="Arial, sans-serif" font-size="12" fill="#374151">• SaaS 产品后端服务</text>
+      
+      <rect x="0" y="100" width="280" height="25" rx="12" fill="#dbeafe"/>
+      <text x="140" y="115" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">⭐ 推荐指数: 5/5</text>
+    </g>
+  </g>
+  
+  <!-- Rapid Prototyping -->
+  <g transform="translate(430, 70)">
+    <rect x="0" y="0" width="320" height="180" rx="15" fill="white" filter="url(#cardShadow)"/>
+    <rect x="0" y="0" width="320" height="50" rx="15" fill="#059669"/>
+    
+    <!-- Icon -->
+    <circle cx="40" cy="25" r="18" fill="#10b981" filter="url(#iconGlow)"/>
+    <text x="40" y="32" font-family="Arial, sans-serif" font-size="20" fill="white" text-anchor="middle">🚀</text>
+    
+    <text x="70" y="32" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">快速原型</text>
+    
+    <g transform="translate(20, 70)">
+      <text x="0" y="20" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1f2937">适合场景：</text>
+      <text x="0" y="40" font-family="Arial, sans-serif" font-size="12" fill="#374151">• 快速验证业务想法</text>
+      <text x="0" y="55" font-family="Arial, sans-serif" font-size="12" fill="#374151">• MVP 产品开发</text>
+      <text x="0" y="70" font-family="Arial, sans-serif" font-size="12" fill="#374151">• 技术概念验证</text>
+      <text x="0" y="85" font-family="Arial, sans-serif" font-size="12" fill="#374151">• 黑客马拉松项目</text>
+      
+      <rect x="0" y="100" width="280" height="25" rx="12" fill="#d1fae5"/>
+      <text x="140" y="115" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#059669" text-anchor="middle">⭐ 推荐指数: 5/5</text>
+    </g>
+  </g>
+  
+  <!-- Learning Projects -->
+  <g transform="translate(50, 270)">
+    <rect x="0" y="0" width="320" height="180" rx="15" fill="white" filter="url(#cardShadow)"/>
+    <rect x="0" y="0" width="320" height="50" rx="15" fill="#7c2d12"/>
+    
+    <!-- Icon -->
+    <circle cx="40" cy="25" r="18" fill="#ea580c" filter="url(#iconGlow)"/>
+    <text x="40" y="32" font-family="Arial, sans-serif" font-size="20" fill="white" text-anchor="middle">📚</text>
+    
+    <text x="70" y="32" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">学习项目</text>
+    
+    <g transform="translate(20, 70)">
+      <text x="0" y="20" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1f2937">适合场景：</text>
+      <text x="0" y="40" font-family="Arial, sans-serif" font-size="12" fill="#374151">• 学习 FastAPI 最佳实践</text>
+      <text x="0" y="55" font-family="Arial, sans-serif" font-size="12" fill="#374151">• 理解企业级架构设计</text>
+      <text x="0" y="70" font-family="Arial, sans-serif" font-size="12" fill="#374151">• 掌握权限管理系统</text>
+      <text x="0" y="85" font-family="Arial, sans-serif" font-size="12" fill="#374151">• 练习现代开发流程</text>
+      
+      <rect x="0" y="100" width="280" height="25" rx="12" fill="#fed7aa"/>
+      <text x="140" y="115" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#7c2d12" text-anchor="middle">⭐ 推荐指数: 4/5</text>
+    </g>
+  </g>
+  
+  <!-- Microservices -->
+  <g transform="translate(430, 270)">
+    <rect x="0" y="0" width="320" height="180" rx="15" fill="white" filter="url(#cardShadow)"/>
+    <rect x="0" y="0" width="320" height="50" rx="15" fill="#7c3aed"/>
+    
+    <!-- Icon -->
+    <circle cx="40" cy="25" r="18" fill="#a855f7" filter="url(#iconGlow)"/>
+    <text x="40" y="32" font-family="Arial, sans-serif" font-size="20" fill="white" text-anchor="middle">🔧</text>
+    
+    <text x="70" y="32" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">微服务</text>
+    
+    <g transform="translate(20, 70)">
+      <text x="0" y="20" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1f2937">适合场景：</text>
+      <text x="0" y="40" font-family="Arial, sans-serif" font-size="12" fill="#374151">• 构建微服务架构的基础</text>
+      <text x="0" y="55" font-family="Arial, sans-serif" font-size="12" fill="#374151">• API 网关后端服务</text>
+      <text x="0" y="70" font-family="Arial, sans-serif" font-size="12" fill="#374151">• 独立的业务模块</text>
+      <text x="0" y="85" font-family="Arial, sans-serif" font-size="12" fill="#374151">• 云原生应用开发</text>
+      
+      <rect x="0" y="100" width="280" height="25" rx="12" fill="#e9d5ff"/>
+      <text x="140" y="115" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#7c3aed" text-anchor="middle">⭐ 推荐指数: 4/5</text>
+    </g>
+  </g>
+  
+  <!-- Bottom Banner -->
+  <rect x="50" y="460" width="700" height="30" rx="15" fill="rgba(255,255,255,0.1)"/>
+  <text x="400" y="480" font-family="Arial, sans-serif" font-size="14" fill="white" text-anchor="middle">🌟 无论哪种场景，我们都能帮你快速启动项目！</text>
+</svg>

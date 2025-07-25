@@ -1,0 +1,107 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="animBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+    <filter id="screenGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#animBg)"/>
+  
+  <!-- Screen Frame -->
+  <rect x="50" y="50" width="700" height="500" rx="20" fill="#1e293b" stroke="#475569" stroke-width="3" filter="url(#screenGlow)"/>
+  
+  <!-- Screen -->
+  <rect x="70" y="90" width="660" height="420" rx="10" fill="#0f172a"/>
+  
+  <!-- Terminal Header -->
+  <rect x="70" y="90" width="660" height="30" rx="10" fill="#374151"/>
+  <circle cx="90" cy="105" r="6" fill="#ef4444"/>
+  <circle cx="110" cy="105" r="6" fill="#f59e0b"/>
+  <circle cx="130" cy="105" r="6" fill="#10b981"/>
+  <text x="150" y="110" font-family="Arial, sans-serif" font-size="12" fill="#f1f5f9">Terminal - FastAPI 项目创建</text>
+  
+  <!-- Animation Steps -->
+  <g transform="translate(90, 140)">
+    <!-- Step 1: Command Input -->
+    <g opacity="1">
+      <animateTransform attributeName="transform" type="translate" values="90,140; 90,140; 90,140" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;1;0.3;0.3;0.3;0.3" dur="8s" repeatCount="indefinite"/>
+      
+      <text x="0" y="20" font-family="Monaco, monospace" font-size="14" fill="#22d3ee">$ </text>
+      <text x="20" y="20" font-family="Monaco, monospace" font-size="14" fill="#f1f5f9">
+        cookiecutter https://github.com/JiayuXu0/create-fastapi-app
+        <animate attributeName="opacity" values="0;0;1;1;1;1;1;1" dur="8s" repeatCount="indefinite"/>
+      </text>
+    </g>
+    
+    <!-- Step 2: Project Name Input -->
+    <g opacity="0">
+      <animateTransform attributeName="transform" type="translate" values="90,140; 90,140; 90,160; 90,160" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0;0;1;1;1;0.3;0.3" dur="8s" repeatCount="indefinite"/>
+      
+      <text x="0" y="40" font-family="Monaco, monospace" font-size="12" fill="#34d399">project_name [My FastAPI Project]: </text>
+      <text x="280" y="40" font-family="Monaco, monospace" font-size="12" fill="#fbbf24">
+        Awesome API
+        <animate attributeName="opacity" values="0;0;0;0;1;1;1;1" dur="8s" repeatCount="indefinite"/>
+      </text>
+    </g>
+    
+    <!-- Step 3: Database Selection -->
+    <g opacity="0">
+      <animateTransform attributeName="transform" type="translate" values="90,140; 90,140; 90,180; 90,180" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0;0;0;0;1;1;0.3" dur="8s" repeatCount="indefinite"/>
+      
+      <text x="0" y="80" font-family="Monaco, monospace" font-size="12" fill="#34d399">Select database_type:</text>
+      <text x="0" y="100" font-family="Monaco, monospace" font-size="12" fill="#f1f5f9">1 - postgresql</text>
+      <text x="0" y="120" font-family="Monaco, monospace" font-size="12" fill="#f1f5f9">2 - sqlite</text>
+      <text x="0" y="140" font-family="Monaco, monospace" font-size="12" fill="#34d399">Choose from 1, 2 [1]: </text>
+      <text x="180" y="140" font-family="Monaco, monospace" font-size="12" fill="#fbbf24">
+        1
+        <animate attributeName="opacity" values="0;0;0;0;0;0;1;1" dur="8s" repeatCount="indefinite"/>
+      </text>
+    </g>
+    
+    <!-- Step 4: Success Message -->
+    <g opacity="0">
+      <animateTransform attributeName="transform" type="translate" values="90,140; 90,140; 90,200; 90,200" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0;0;0;0;0;0;1" dur="8s" repeatCount="indefinite"/>
+      
+      <rect x="0" y="180" width="600" height="80" rx="5" fill="#065f46" stroke="#10b981" stroke-width="2"/>
+      <text x="10" y="200" font-family="Monaco, monospace" font-size="14" fill="#34d399" font-weight="bold">✅ 项目创建成功！</text>
+      <text x="10" y="220" font-family="Monaco, monospace" font-size="12" fill="#6ee7b7">📁 项目路径: ./awesome-api</text>
+      <text x="10" y="240" font-family="Monaco, monospace" font-size="12" fill="#6ee7b7">🚀 准备就绪，可以开始开发了！</text>
+    </g>
+    
+    <!-- Typing Cursor -->
+    <rect x="0" y="0" width="2" height="16" fill="#22d3ee">
+      <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" 
+        values="20,4; 400,4; 400,4; 460,24; 460,24; 200,124; 200,124; 10,244" 
+        dur="8s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  
+  <!-- Progress Bar -->
+  <rect x="70" y="520" width="660" height="20" rx="10" fill="#374151"/>
+  <rect x="70" y="520" width="0" height="20" rx="10" fill="#10b981">
+    <animate attributeName="width" values="0;660;660;0" dur="8s" repeatCount="indefinite"/>
+  </rect>
+  <text x="400" y="535" font-family="Arial, sans-serif" font-size="12" fill="#f1f5f9" text-anchor="middle">创建进度</text>
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#f1f5f9" text-anchor="middle">🎬 FastAPI 项目创建演示</text>
+  
+  <!-- Features Highlight -->
+  <g transform="translate(50, 570)">
+    <text x="0" y="15" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">⚡ 2分钟快速创建 • 🏗️ 企业级架构 • 🔐 完整权限系统 • 🚀 生产就绪</text>
+  </g>
+</svg>
