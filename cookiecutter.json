@@ -26,19 +26,8 @@
         "*.css",
         "*.map",
         "*.whl",
-        "*.log",
-        "*.db",
-        "migrations/*",
-        "logs/*",
-        "*.sqlite3*",
-        "node_modules/*",
-        "__pycache__/*",
-        "*.pyc",
-        "frontend/*",
-        "backend/*",
-        "site/*",
-        "htmlcov/*",
-        "test_env/*",
+        "docs/images/*",
+        "frontend/assets/*",
         "src/log/log.py"
     ]
 }

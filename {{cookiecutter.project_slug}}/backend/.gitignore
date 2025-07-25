@@ -1,0 +1,40 @@
+# Backend specific runtime files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+
+# UV lock file
+uv.lock
+
+# Database files
+*.sqlite3*
+*.db*
+
+# Logs
+*.log
+logs/
+
+# Coverage reports
+htmlcov/
+.coverage*
+.pytest_cache/
+
+# Cache
+.ruff_cache/
+.mypy_cache/
+
+# Temporary files
+temp/
+tmp/
+*.tmp
+
+# Migration data (keep structure)
+# migrations/
+
+# Upload directories
+uploads/
+media/

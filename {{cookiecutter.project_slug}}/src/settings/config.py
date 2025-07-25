@@ -2,7 +2,7 @@ import json
 import os
 import secrets
 
-from pydantic import field_validator
+from pydantic import Field, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -56,7 +56,17 @@ class Settings(BaseSettings):
     # 数据库配置
     DB_ENGINE: str = "postgres"  # 默认使用PostgreSQL
     DB_HOST: str = "localhost"
-    DB_PORT: int = 5432
+    DB_PORT: int | None = Field(default=5432, validate_default=True)
+    
+    @field_validator("DB_PORT", mode="before")
+    @classmethod
+    def validate_db_port(cls, v):
+        if v == "" or v is None:
+            return None
+        try:
+            return int(v)
+        except (ValueError, TypeError):
+            return 5432
     DB_USER: str = os.getenv("DB_USER", "postgres")
     DB_PASSWORD: str = os.getenv("DB_PASSWORD", "")
     DB_NAME: str = "{{cookiecutter.project_slug.replace('-', '_')}}_db"

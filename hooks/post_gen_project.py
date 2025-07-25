@@ -41,7 +41,24 @@ def setup_database_config():
 
 def create_env_example():
     """Create .env.example file with appropriate settings."""
-    env_content = """# 应用配置
+    if database_type == "postgresql":
+        db_config = """# 数据库配置
+DB_ENGINE=postgresql
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER=postgres
+DB_PASSWORD=your-db-password
+DB_NAME={{ cookiecutter.project_slug.replace('-', '_') }}_db"""
+    else:  # sqlite
+        db_config = """# 数据库配置
+DB_ENGINE=sqlite
+DB_HOST=
+DB_PORT=
+DB_USER=
+DB_PASSWORD=
+DB_NAME={{ cookiecutter.project_slug.replace('-', '_') }}_db"""
+    
+    env_content = f"""# 应用配置
 APP_ENV=development
 DEBUG=True
 APP_TITLE="{{ cookiecutter.project_name }}"
@@ -53,13 +70,7 @@ SECRET_KEY=your-secret-key-here-minimum-32-chars
 SWAGGER_UI_USERNAME=admin
 SWAGGER_UI_PASSWORD=your-swagger-password
 
-# 数据库配置
-DB_ENGINE={}
-DB_HOST=localhost
-DB_PORT={}
-DB_USER={}
-DB_PASSWORD=your-db-password
-DB_NAME={{ cookiecutter.project_slug.replace('-', '_') }}_db
+{db_config}
 
 # CORS配置
 CORS_ORIGINS=http://localhost:3000,http://localhost:8080
@@ -67,11 +78,7 @@ CORS_ORIGINS=http://localhost:3000,http://localhost:8080
 # JWT配置
 JWT_ACCESS_TOKEN_EXPIRE_MINUTES=240
 JWT_REFRESH_TOKEN_EXPIRE_DAYS=7
-""".format(
-        database_type,
-        "5432" if database_type == "postgresql" else "",
-        "postgres" if database_type == "postgresql" else ""
-    )
+"""
 
     if use_redis:
         env_content += """
@@ -99,6 +106,13 @@ def remove_pre_commit_if_not_needed():
         if os.path.exists(".pre-commit-config.yaml"):
             os.remove(".pre-commit-config.yaml")
             print("🗑️  Removed .pre-commit-config.yaml")
+
+def remove_migrations_directory():
+    """Remove migrations directory to ensure clean start."""
+    migrations_dir = "migrations"
+    if os.path.exists(migrations_dir):
+        shutil.rmtree(migrations_dir)
+        print("🗑️  Removed migrations/ directory for clean start")
 
 def set_file_permissions():
     """Set appropriate file permissions."""
@@ -133,6 +147,7 @@ if __name__ == "__main__":
     remove_docs_if_not_needed()
     remove_docker_if_not_needed()
     remove_pre_commit_if_not_needed()
+    remove_migrations_directory()
     setup_database_config()
     create_env_example()
     set_file_permissions()
